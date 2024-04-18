@@ -75,7 +75,9 @@ namespace TrilhaApiDesafio.Controllers
             var tarefaBanco = _context.Tarefas.Find(id);
 
             if (tarefaBanco == null)
+            {
                 return NotFound();
+            }
 
             if (tarefa.Data == DateTime.MinValue)
             {
@@ -89,7 +91,7 @@ namespace TrilhaApiDesafio.Controllers
 
             _context.Tarefas.Update(tarefaBanco);
             _context.SaveChanges();
-            
+
             return Ok();
         }
 
